@@ -12,7 +12,6 @@ import {
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -27,15 +26,13 @@ import * as z from "zod";
 
 const formSchema = z.object({
   email: z.string().email(),
-  password: z.string(),
 });
 
-const LoginPage = () => {
+const SignUpPage = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       email: "",
-      password: "",
     },
   });
 
@@ -48,8 +45,8 @@ const LoginPage = () => {
       <PersonStandingIcon size={50} />
       <Card className="w-full max-w-sm">
         <CardHeader>
-          <CardTitle>Login</CardTitle>
-          <CardDescription>Login to your SupportMe account</CardDescription>
+          <CardTitle>Sign up</CardTitle>
+          <CardDescription>Sign up for a new SupportMe account</CardDescription>
         </CardHeader>
         <CardContent>
           <Form {...form}>
@@ -66,39 +63,19 @@ const LoginPage = () => {
                     <FormControl>
                       <Input placeholder="john@doe.com" {...field} />
                     </FormControl>
-                    <FormDescription>
-                      This is the email address you signed up to SupportMe
-                    </FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
               />
-              <FormField
-                control={form.control}
-                name="password"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Password</FormLabel>
-                    <FormControl>
-                      <Input
-                        type="password"
-                        placeholder="Password"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button>Login</Button>
+              <Button>Sign up</Button>
             </form>
           </Form>
         </CardContent>
         <CardFooter className="justify-between">
-          <small>Don't have an account?</small>
-          <Link href="/sign-up">
+          <small>Already have an account?</small>
+          <Link href="/login">
             <Button variant="outline" size="sm">
-              Sign up
+              Login
             </Button>
           </Link>
         </CardFooter>
@@ -107,4 +84,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default SignUpPage;

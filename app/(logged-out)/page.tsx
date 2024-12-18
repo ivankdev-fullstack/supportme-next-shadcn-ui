@@ -11,11 +11,11 @@ const LandingPage = () => {
       </h1>
       <p>The best dashboard to manage customer support</p>
       <div className="flex gap-2 items-center">
-        <Link href="login">
+        <Link href="/login">
           <Button>Log in</Button>
         </Link>
         <small>or</small>
-        <Link href="signup">
+        <Link href="/sign-up">
           <Button variant="outline">Sign up</Button>
         </Link>
       </div>
