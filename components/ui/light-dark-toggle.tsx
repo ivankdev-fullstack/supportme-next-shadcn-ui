@@ -13,7 +13,7 @@ type Props = {
   className?: string;
 };
 
-const LightDarkToggle = ({ className }: Props) => {
+export const LightDarkToggle = ({ className }: Props) => {
   const [isDarkMode, setDarkMode] = useState(true);
 
   const toggleColorMode = () => {
@@ -34,5 +34,3 @@ const LightDarkToggle = ({ className }: Props) => {
     </TooltipProvider>
   );
 };
-
-export default LightDarkToggle;
