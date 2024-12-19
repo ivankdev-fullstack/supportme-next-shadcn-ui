@@ -238,7 +238,6 @@ export default function SignupPage() {
                           weekStartsOn={1}
                           fromDate={dobFromDate}
                           toDate={new Date()}
-                          captionLayout="dropdown-buttons"
                         />
                       </PopoverContent>
                     </Popover>

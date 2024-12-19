@@ -7,19 +7,18 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import cm from "@/public/images/cm.jpg";
 import {
   AlertTriangleIcon,
   BadgeCheckIcon,
   LaptopIcon,
   PartyPopperIcon,
   UserCheck2Icon,
-  UserCheckIcon,
   UserIcon,
   UserRoundXIcon,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import cm from "@/public/images/cm.jpg";
 import WorkLocationTrends from "./work-location-trends";
 
 export default function EmployeesStats() {
@@ -40,7 +39,7 @@ export default function EmployeesStats() {
               <div className="text-5xl font-bold">{totalEmployees}</div>
             </div>
             <div>
-              <Button size="xs" asChild>
+              <Button asChild>
                 <Link href="/dashboard/employees">View all</Link>
               </Button>
             </div>
